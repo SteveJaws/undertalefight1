@@ -39,10 +39,15 @@ function items(){
 }
 
 function appel(){
-    fight()
-    appelchecker = "yes"
+    appel2.style.display = "none";
+    cancel.style.display = "none";
+    appelchecker = "yes";
     hpcounter+=1
     bar2progress.style.width = (parseFloat(bar2progress.style.width) + 1) + "vw";
+    enter.innerHTML = "YOU ATE THE APPLE";
+    setTimeout(function(){
+        fight();
+    },1500)
 }
 
 function klik(){
@@ -79,6 +84,7 @@ function normaal(){
 }
 
 function attack1(){
+    buttonsk.style.display = "none";
     hit.style.display = "block"
     cancel.style.display = "block"
     pick.style.display = "none"
@@ -192,6 +198,7 @@ function attack2(){
     // voor het acten
 
 function acting1(){
+    buttonsk.style.display = "none";
     pick.style.display = "none";
     hello.style.display = "block";
     cancel.style.display = "block";
@@ -228,7 +235,7 @@ function fight(){
     keyboard ="on"
     test.style.display = "block";
     test.innerHTML = "";
-    enter.style.display = "";
+    enter.innerHTML = "";
     player.style.display = "block";
     if(keyboard == "on")
     window.addEventListener('keydown', (event)=>{
@@ -310,4 +317,14 @@ function jump(){
 
 function reloadpage(){
     location.reload();
+}
+
+function mercygo(){
+    pick.style.display = "none";
+    buttonsk.style.display = "none";
+    enter.innerHTML = "YOU SPARED SANS";
+    sans.style.opacity = "0.3"
+    setTimeout(function(){
+        reloadpage();
+    },1500)
 }

@@ -11,12 +11,14 @@
 </head>
 <body>
     <audio src="./media/8-bit-punch.wav" id="punch"></audio>
-    <audio src="./media/THE WORLD REVOLVING (Jevil's Theme) - Deltarune (Extended).mp3" id="song"></audio>
+    <audio src="./media/MEGALOVANIA [10 Minute version].mp3" id="song"></audio>
     
     <div class="namechooser" id="namechooser">
         <p>CHOOSE YOUR USERNAME</p>
         <input type="text" id="username" class="username">
         <button onclick="start()" class="start" id="start">START</button>
+        <p class="klein">YOU CAN LET THE HEART JUMP WITH (Z)</p>
+        <p class="klein">if your name doesnt show up the first time reload the page</p>
     </div>
     <div class="alles" id="alles">
         <div class="enemyhpbar" id="enemyhpbar">
@@ -64,7 +66,7 @@
             <button class="fight" id="fight" onclick="attack1()">⚔︎ FIGHT</button>
             <button class="fight" id="act" onclick="acting1()">⦆⦆⦆ ACT</button>
             <button class="fight" id="item" onclick="items()">💼 ITEMS</button>
-            <button class="fight" id="mercy">MERCY</button>
+            <button class="fight" id="mercy" onclick="mercygo()">MERCY</button>
         </div>
     </div>
     
