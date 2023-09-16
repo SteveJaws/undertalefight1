@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sans fight</title>
+    <link rel="stylesheet" href="./CSS/battle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <audio src="./media/8-bit-punch.wav" id="punch"></audio>
+    <audio src="./media/THE WORLD REVOLVING (Jevil's Theme) - Deltarune (Extended).mp3" id="song"></audio>
+    
+    <div class="namechooser" id="namechooser">
+        <p>CHOOSE YOUR USERNAME</p>
+        <input type="text" id="username" class="username">
+        <button onclick="start()" class="start" id="start">START</button>
+    </div>
+    <div class="alles" id="alles">
+        <div class="enemyhpbar" id="enemyhpbar">
+            <div class="enemyhp" id="enemyhp"></div>
+        </div>
+        <div class="enemy" id="enemy">
+            
+            <div class="sans" id="sans">
+                <div class="bar" id="bar">
+                    <div class="barprogress" id="barprogress"></div>
+                </div>
+            </div>
+        </div>
+
+          
+
+        <div class="text_fight" id="text_fight">
+            <div class="player" id="player">♡</div>
+            <div class="bone" id="bone"></div>
+            <p class="pick" id="pick">PICK AN OPTION</p>
+            <p class="enter" id="enter"></p>
+            <p id="dead" class="dead">YOU DIED</p>
+            
+            <div id="options" class="options">
+                <p class="test" id="test" onclick="normaal()"></p>
+                <p class="hit" id="hit" onclick="attack2()">* HIT</p>
+                <p class="hello" id="hello" onclick="acting2()">* GREET SANS</p>
+                <p class="cancel" id="cancel" onclick="normaal()">* CANCEL</p>
+            </div> 
+            
+            
+        </div>
+
+        <div class="blink" id="blink"></div>
+        <div class="person">
+            <p class="personname" id="personname"></p>
+            HP
+            <div class="bar2">
+                <div class="bar2progress" id="bar2progress"></div>
+            </div>
+            <div class="hp" id="hp">30/30</div>
+        </div>
+        <div class="buttons">
+            <button class="fight" id="fight" onclick="attack1()">⚔︎ FIGHT</button>
+            <button class="fight" id="act" onclick="acting1()">⦆⦆⦆ ACT</button>
+            <button class="fight" id="item">💼 ITEM</button>
+            <button class="fight" id="mercy">MERCY</button>
+        </div>
+    </div>
+    
+</body>
+<script src="./JS/battle.js"></script>
+</html>
