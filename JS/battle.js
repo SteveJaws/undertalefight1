@@ -24,6 +24,9 @@ const options = document.getElementById("options");
 const hello = document.getElementById("hello");
 let player = document.getElementById("player"); 
 
+function klik(){
+    jump();
+}
 
 function start(){
     document.getElementById("namechooser").style.display = "none";
@@ -203,12 +206,6 @@ function fight(){
     player.style.display = "block";
     if(keyboard == "on")
     window.addEventListener('keydown', (event)=>{
-        if(event.key == "a"){
-            left();
-        }
-        if(event.key == "d"){
-            right();
-        }
         if(event.key == "z"){
             jump();
         }
@@ -268,23 +265,6 @@ function fight(){
     },10000)
 
     
-}
-
-
-let counterleft = parseInt(player.style.left) || 0;
-let counterright = parseInt(player.style.left) || 0;
-let counterup = parseInt(player.style.top) || 0;
-let counterdown = parseInt(player.style.top) || 0;
-function left(){
-    player.style.left = counterleft + "px"; 
-    counterleft -= 5;
-    console.log("left");
-}
-
-function right(){
-    player.style.left = counterright + "px"; 
-    counterright += 5;
-    console.log("right")
 }
 
 function jump(){
