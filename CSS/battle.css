@@ -155,12 +155,16 @@ body{
     font-size: xx-large;
 }
 
-.buttons{
+.buttonsk{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 43vw;
     height: 10vh;
+}
+
+.appel{
+    display: none;
 }
 
 .options > p:hover{

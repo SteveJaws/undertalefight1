@@ -1,6 +1,8 @@
-
+let appelchecker = "no";
 let counter = 0;
 
+const appel2 = document.getElementById("appel")
+const buttonsk = document.getElementById("buttonsk")
 const song = document.getElementById("song")
 let hp = document.getElementById("hp");
 let hpcounter = 3;
@@ -24,6 +26,25 @@ const options = document.getElementById("options");
 const hello = document.getElementById("hello");
 let player = document.getElementById("player"); 
 
+
+function items(){
+    pick.style.display = "none";
+    buttonsk.style.display = "none";
+    appel2.style.display = "block";
+    cancel.style.display = "block";
+    if(appelchecker == "yes"){
+        console.log("asdbhasdkhjahskjdhasjkhdjkashjkdakjs")
+        appel2.style.display = "none"
+    }
+}
+
+function appel(){
+    fight()
+    appelchecker = "yes"
+    hpcounter+=1
+    bar2progress.style.width = (parseFloat(bar2progress.style.width) + 1) + "vw";
+}
+
 function klik(){
     jump();
 }
@@ -39,7 +60,9 @@ function start(){
 // function voor alles normaal zetten
 
 function normaal(){
-    keyboard = "off"
+    appel2.style.display = "none";
+    buttonsk.style.display = "flex";
+    keyboard = "off";
     bone.style.display = "none";
     textfight.style.width = "40vw";
     fightaction.style.display = "block";
@@ -199,6 +222,9 @@ function acting2(){
     // de aanval van de tegenstander
 let keyboard = "off"
 function fight(){
+    cancel.style.display = "none";
+    appel2.style.display = "none";
+    pick.style.display = "none";
     keyboard ="on"
     test.style.display = "block";
     test.innerHTML = "";
@@ -233,6 +259,10 @@ function fight(){
             if(bonecounter == 12 && jumpchecker == "no"){
                 hpcounter-=1;
                 bar2progress.style.width = hpcounter + "vw"
+            }
+
+            if(hpcounter == 3){
+                hp.innerHTML = "30/30"
             }
             if(hpcounter == 2){
                 hp.innerHTML = "20/30"
