@@ -7,7 +7,6 @@ const song = document.getElementById("song")
 let hp = document.getElementById("hp");
 let hpcounter = 3;
 const bar2progress = document.getElementById("bar2progress")
-let username = document.getElementById("username").value
 let jumpchecker = "no";
 const bone = document.getElementById("bone");
 const test = document.getElementById("test");
@@ -55,6 +54,7 @@ function klik(){
 }
 
 function start(){
+    let username = document.getElementById("username").value
     document.getElementById("namechooser").style.display = "none";
     document.getElementById("alles").style.opacity = "1";
     document.getElementById("alles").style.pointerEvents = "all";
