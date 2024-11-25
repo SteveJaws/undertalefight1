@@ -239,9 +239,7 @@ function fight(){
     player.style.display = "block";
     if(keyboard == "on")
     window.addEventListener('keydown', (event)=>{
-        if(event.key == "z"){
-            jump();
-        }
+        jump();
     })
     
     // bone traveler
