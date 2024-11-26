@@ -61,20 +61,22 @@ body{
 
 .player{
     color: blue;
-    display: none;
-    position: relative;
-    left: 8vw;
-    top: 16.3vh;
+    display: block;
+    position: absolute;
+    width: 3.8vmax;
+    height: 3.8vmax;
+    left: 30%;
+    top: 60%;
 }
 .animate{
     animation: jump 500ms;
 }
 
 @keyframes jump{
-    0%{top: 16.3vh;}
-    30%{top: 8vh;}
-    70%{top: 8vh;}
-    100%{top: 16.3vh;}
+    0%{top: 60%;}
+    30%{top: 54%;}
+    70%{top: 54%;}
+    100%{top: 60%;}
 }
 
 .person{
@@ -108,13 +110,13 @@ body{
 }
 
 .bone{
-    display: none;
-    width: 7%;
-    height: 30%;
+    display: block;
+    width: 3.8vmax;
+    height: 3.8vmax;
     color: red;
-    position: relative;
-    left: 90%;
-    top: 12.5vh;
+    position: absolute;
+    right: 30%;
+    top: 60%;
     background-image: url(./sans/bone.png);
     background-size: cover;
 }
@@ -145,7 +147,7 @@ body{
     background-image: url(./sans/sans.gif);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 40%;
+    background-size: 10vmax;
     height: 100%;
     width: 100%;
     display: flex;
@@ -158,7 +160,7 @@ body{
     height: 20vh;
     border: 5px solid white;
     color: white;
-    font-size: xx-large;
+    font-size: 2vmax;
 }
 
 .buttonsk{

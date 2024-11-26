@@ -245,52 +245,64 @@ function fight(){
     // bone traveler
     
     let checker = "no"
-    let bonecounter = 90;
 
-    const bonetraveler = setInterval(function(){
-        bone.style.display = "block";
-        if(checker == "yes"){
+    let bonecounter = 90; // Starting position (percentage)
+    const moveSpeed = 0.6; // Speed of movement (adjust as needed)
+    let animationRunning = true;
+
+    function moveBone() {
+        console.log(bonecounter);
+        if (checker === "yes") {
             bone.style.display = "none";
-            clearInterval(bonetraveler)
-        }else{
-            bone.style.left = bonecounter + "%";
-            bonecounter-=6;
-            console.log(bonecounter)
-            if(bonecounter <= 1){
-                bonecounter = 90;
-            }
-            // hit detection
-           
-            if(bonecounter == 12 && jumpchecker == "no"){
-                hpcounter-=1;
-                bar2progress.style.width = hpcounter + "vw"
-            }
+            animationRunning = false; // Stop the animation loop
+            return;
+        }
 
-            if(hpcounter == 3){
-                hp.innerHTML = "30/30"
-            }
-            if(hpcounter == 2){
-                hp.innerHTML = "20/30"
-            }
-            if(hpcounter == 1){
-                hp.innerHTML = "10/30"
-            }
-            // if you die
-            if(hpcounter == 0){
-                clearInterval(bonetraveler)
-                bone.style.display = "none"
-                hp.innerHTML = "0/30"
-                document.getElementById("dead").style.display = "block"
-                setTimeout(function(){
-                    reloadpage()
-                },1500)
-               
+        bone.style.display = "block";
+        bonecounter -= moveSpeed;
+
+        bone.style.left = `${bonecounter}%`;
+
+        // Reset bone position if it goes off-screen
+        if (bonecounter <= 1) {
+            bonecounter = 90;
+        }
+
+        // Hit detection
+        if (Math.round(bonecounter) == 30 && jumpchecker === "no") {
+            hpcounter -= 1;
+            bar2progress.style.width = `${hpcounter}vw`;
+
+            if (hpcounter === 3) {
+                hp.innerHTML = "30/30";
+            } else if (hpcounter === 2) {
+                hp.innerHTML = "20/30";
+            } else if (hpcounter === 1) {
+                hp.innerHTML = "10/30";
+            } else if (hpcounter === 0) {
+                // If you die
+                animationRunning = false;
+                bone.style.display = "none";
+                hp.innerHTML = "0/30";
+                document.getElementById("dead").style.display = "block";
+                setTimeout(() => reloadpage(), 1500);
+                return;
             }
         }
-    },100)
-    setTimeout(function(){
-        checker = "yes"
-    },9999)
+
+        if (animationRunning) {
+            requestAnimationFrame(moveBone); // Continue the animation
+        }
+    }
+
+    // Start the animation
+    moveBone();
+
+    // Stop the bone after 9999 ms
+    setTimeout(() => {
+        checker = "yes";
+    }, 9999);
+
 
     setTimeout(function(){
         if(hpcounter > 0){
