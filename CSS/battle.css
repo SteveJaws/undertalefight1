@@ -61,7 +61,7 @@ body{
 
 .player{
     color: blue;
-    display: block;
+    display: none;
     position: absolute;
     width: 3.8vmax;
     height: 3.8vmax;
@@ -110,7 +110,7 @@ body{
 }
 
 .bone{
-    display: block;
+    display: none;
     width: 3.8vmax;
     height: 3.8vmax;
     color: red;
